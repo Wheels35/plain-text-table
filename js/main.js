@@ -3,10 +3,17 @@
 
     function createTable() {
         $("#table-wrapper").handsontable({
+            licenseKey: 'non-commercial-and-evaluation',
             colHeaders: false,
             contextMenu: true,
             mergeCells: true,
-            afterRender: genPTT
+            afterRender: genPTT,
+            fragmentSelection: true,
+            copyPaste: {
+                pasteMode: 'shift_down',
+                rowsLimit: 10000,
+                columnsLimit: 10000
+            }
         });
     }
 
